@@ -1,0 +1,49 @@
+---
+title: 'Introduction to R: part 1'
+author: "Karin Groothuis-Oudshoorn"
+date: "6/24/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, prompt = TRUE, comment = '', collapse = TRUE)
+```
+
+## 1: First steps into R
+
+After installing R and RStudio you will know start learning to use is. If you open RStudio the primary window is the command-line interface, the Console window (left below). In that window you can type commands after the ">" sign. For example, let's calculate the sum of 5 and 7:
+
+```{r}
+5 + 7
+```
+
+In this way we use R as a calculator. But off course it is much more than that! As another simple example to explore what can be done in R
+let us plot a quadratic function $ y = x^2$, where $x$ has values between $-1$ and $2$. For this we have to define a sequence of values for $x$ and calculate for each value of $x$ the value of $y$. 
+
+
+```{r}
+x <- seq(from = -1, to = 2, by = 0.1)     # specify the vector of x values
+y <- x^2                                  # calculate the corresponding y values
+plot(x, y, col = "skyblue", type = "l")   # plot the x,y points as a blue line
+```
+
+What have we learned until now? In the previous block two R functions where used: 'seq' and 'plot'. The _'seq'_ function makes a vector (that is a sequence, list of values) starting with the number as specified with 'from' until the number defined with 'to'. The steps it takes to go from, in this case, -1 to 2 is specified with 'by'. So in our case the steps are 0.1. This immediately gives an idea how functions work in R. A function typically has inputs as given between the brackets '(   )' and it returns something, in this case a vector. The operator '<-' assigns the output of the function to an object 'x'. The object 'x' is a list of values. 
+
+We can see that also by just typing $x$ after the prompt:
+
+```{r}
+x                      # display x
+
+length(x)              # give the length of vector x
+```
+_length_ is a function that gives the length of a vector. 
+
+## Functions
+
+Functions are very important in R. There are many functions available to calculate or do something with objects like vectors, lists, matrices etcetera. And moreover, you can define and use own functions. As said before, a function takes input values, also called 'arguments' and does something with them. The general form a function looks like is as follows:
+
+$FunctionName  <- function( arguments)\{
+\newline
+commands \newline
+\} $
+
