@@ -1,7 +1,6 @@
 # Material
-My own material on Github
 
-A line I wrote on my local computer
+This material is for setting up a R course. I will add more in due time.
 
-Commit a line from RStudio
+
 
